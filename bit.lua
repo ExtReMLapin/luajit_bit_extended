@@ -31,22 +31,22 @@ end
 
 --fast
 
---bit.select(0xffffffff, 133742101)
+--bit.select(133742101, 0xffffffff)
 --entry : 133742101	  00000111 11111000 10111110 00010101
 --exit:   133742101	  00000111 11111000 10111110 00010101
 
---bit.select(0xf0000, 133742101)
+--bit.select(133742101, 0x00f0000)
 --entry : 133742101   00000111 11111000 10111110 00010101
 --mask =              00000000 00001111 00000000 00000000
 --exit: 8                      00001000
 
---bit.select(0xf0ff000, 133742101)
+--bit.select(133742101, 0x0f0ff000)
 --entry : 133742101   00000111 11111000 10111110 00010101
 --mask =              00001111 00001111 11110000 00000000
 --exit: 28811             0111 00001000 10110000 00000000
 --exit: 28811                           01110000 10001011
 
-function bit.select(mask, value)
+function bit.select(value, mask)
 	if mask == 0 then return 0 end
 	local maskOffset = bit.getPos(bit.LSB(mask)) - 1
 
