@@ -1,4 +1,4 @@
---fast function
+--fast function, 32bits only
 --entry : 424242    00000000 00000110 01111001 00110010
 --exit: 262144      00000000 00000100 00000000 00000000
 function bit.MSB(value)
@@ -13,7 +13,7 @@ function bit.MSB(value)
 	return value
 end
 
---fast
+--fast, any size
 --entry : 424242   00000000 00000110 01111001 00110010
 --exit: 2          00000000 00000000 00000000 00000010
 function bit.LSB(value)
